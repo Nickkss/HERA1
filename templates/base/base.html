@@ -1,0 +1,220 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'theme/assets/css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/magnific-popup.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/assets/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'theme/assets/css/iconplugins.css' %}">
+
+    <link rel="stylesheet" href="{% static 'theme/assets/css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'theme/assets/css/responsive.css' %}">
+
+    <link rel="stylesheet" href="{% static 'theme/assets/css/theme-dark.css' %}">
+
+    <title>
+        {% block title %}
+        {{settings.title}}
+        {% endblock title %}
+    </title>
+
+    {% if settings.icon %}
+    <link rel="icon" type="image/png" href="{{settings.icon.url}}">
+    {% else %}
+    <link rel="icon" type="image/png" href="{% static 'theme/assets/images/favicon.png' %}">
+    {% endif %}
+    {% block styles %}
+
+    {% endblock styles %}
+</head>
+
+<body class="bg-white">
+
+    <div id="preloader">
+        <div id="preloader-area">
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+            <div class="spinner"></div>
+        </div>
+        <div class="preloader-section preloader-left"></div>
+        <div class="preloader-section preloader-right"></div>
+    </div>
+
+    <!-- Header Start -->
+    {% block header %}
+    {% include 'base/header.html' %}
+    {% endblock header %}
+    <!-- Header End -->
+
+    <!-- Messages Start -->
+    {% include 'base/messages.html' %}
+    <!-- Messages End -->
+
+    <div class="modal fade fade-scale searchmodal" id="searchmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="modal-search-form">
+                        <input type="search" class="search-field" placeholder="Search...">
+                        <button type="submit"><i class="ri-search-line"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sidebarmodal modal right fade" id="sidebarmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="sidebar-logo">
+                        {% if settings.logo %}
+                        <img src="{{settings.logo.url}}" class="sidebar-logo1" alt="Image">
+                        {% else %}
+                        <img src="{% static 'theme/assets/images/logos/logo.png' %}" class="sidebar-logo1" alt="Image">
+                        {% endif %}
+                        {% if settings.logo_white %}
+                        <img src="{{settings.logo_white.url}}" class="sidebar-logo2" alt="Image">
+                        {% else %}
+                        <img src="{% static 'theme/assets/images/logos/logo-white.png' %}" class="sidebar-logo2"
+                            alt="Image">
+                        {% endif %}
+                    </div>
+                    <button type="button" class="close" data-bs-dismiss="modal">
+                        <i class="ri-close-line"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="sidebar-about">
+                        <h3>About Us</h3>
+                        <p>
+                            {{settings.about_us}}
+                        </p>
+                    </div>
+                    <div class="contact-us">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-item">
+                            <li>
+                                <i class="ri-phone-line"></i>
+                                <div class="content">
+                                    <h4>Office Address</h4>
+                                    <p>{{settings.address}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-message-2-line"></i>
+                                <div class="content">
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:+123456778">{{settings.phone}}</a></p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-map-pin-line"></i>
+                                <div class="content">
+                                    <h4>Email Us</h4>
+                                    <p><a href="mailto:{{settings.email}}"><span>{{settings.email}}</span></a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="ri-time-line"></i>
+                                <div class="content">
+                                    <h4>Office Open</h4>
+                                    <p>{{settings.office_open}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-follow-us">
+                        <h3>Follow Us</h3>
+                        <ul class="social-wrap">
+                            <li>
+                                <a href="https://vimeo.com/" target="_blank">
+                                    <i class="ri-vimeo-fill"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/" target="_blank">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/" target="_blank">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT START -->
+    {% block content %}
+
+    {% endblock content %}
+    <!-- CONTENT END -->
+
+
+    <!-- FOOTER START -->
+    {% block footer %}
+    {% include 'base/footer.html' %}
+    {% endblock footer %}
+    <!-- FOOTER END -->
+
+
+    <div class="copyright-area">
+        <div class="container">
+            <div class="copy-right-text text-center">
+                <p>
+                    Copyright @{% now 'Y' %}<b>{{settings.title}}</b> All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script src="{% static 'theme/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'theme/assets/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/meanmenu.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/ajaxchimp.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/form-validator.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/contact-form-script.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/owl.carousel.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/jquery-ui.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/magnific-popup.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/aos.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/tweenMax.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'theme/assets/js/custom.js' %}"></script>
+{% block scripts %}
+
+{% endblock scripts %}
+
+</html>

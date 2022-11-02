@@ -1,0 +1,561 @@
+{% extends 'base/base.html' %}
+{% load static i18n crispy_forms_tags crispy_forms_field %}
+{% block title %}
+Home
+{% endblock title %}
+{% block content %}
+<div class="banner-area-three">
+    <div class="banner-slider owl-carousel owl-theme">
+        <div class="banner-item banner-item-bg1">
+            <div class="container-fluid">
+                <div class="banner-content banner-content-ml">
+                    <span>Nail and Beauty Salon</span>
+                    <h1>Bringing Out The Beauty in You</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut elit tellus luctus nec ullamcorper
+                        mattis pulvinar dapibus leo consectetur</p>
+                    <a href="about.html" class="learn-btn">Learn More <i
+                            class="flaticon-arrow-pointing-to-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-item banner-item-bg2">
+            <div class="container-fluid">
+                <div class="banner-content banner-content-ml">
+                    <span>Nail and Beauty Salon</span>
+                    <h1>We’ll Style While You Smile!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Ut elit tellus luctus nec ullamcorper
+                        mattis pulvinar dapibus leo consectetur</p>
+                    <a href="about.html" class="learn-btn">Learn More <i
+                            class="flaticon-arrow-pointing-to-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="features-area pt-100 pb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-4">
+                <div class="features-card-two">
+                    <img src="{% static 'theme/assets/images/features/features-img4.jpg' %}" alt="features" />
+                    <div class="content">
+                        <i class="flaticon-make-up"></i>
+                        <h3>LED Cured Gel Polish</h3>
+                        <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="features-card-two">
+                    <img src="{% static 'theme/assets/images/features/features-img5.jpg' %}" alt="features" />
+                    <div class="content">
+                        <i class="flaticon-relax"></i>
+                        <h3>No Damaging Acrylics</h3>
+                        <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="features-card-two">
+                    <img src="{% static 'theme/assets/images/features/features-img6.jpg' %}" alt="features" />
+                    <div class="content">
+                        <i class="flaticon-makeup"></i>
+                        <h3>Nail Experts Burlington</h3>
+                        <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="about-area section-bg pt-100 pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-img-three mr-20">
+                    <img src="{% static 'theme/assets/images/about/about-img5.jpg' %}" alt="About" />
+                    <div class="sub-img">
+                        <img src="{% static 'theme/assets/images/about/about-sub-img.jpg' %}" alt="About" />
+                    </div>
+                    <div class="content">
+                        <h3>20</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content about-content-max">
+                    <div class="section-title">
+                        <span>About us</span>
+                        <h2>We Increase Your Beauty Salon & Spa</h2>
+                        <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an
+                            unknown printer took a galley of type and scrambled but also the leap into electronic
+                            typesetting. </p>
+                        <p>Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an
+                            unknown printer took a galley of type and</p>
+                    </div>
+                    <a href="#" class="default-btn">Learn More <i class="flaticon-arrow-pointing-to-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-shape">
+        <div class="shape2">
+            <img src="{% static 'theme/assets/images/about/about-vector5.png' %}" alt="About" />
+        </div>
+    </div>
+</div>
+
+
+<div class="services-area ptb-100">
+    <div class="container">
+        <div class="section-title mb-45 text-center">
+            <span>Our Services</span>
+            <h2>What We Offer</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="services-item-two">
+                    <a href="about.html">
+                        <img src="{% static 'theme/assets/images/services/services-img7.jpg' %}" alt="Services" />
+                    </a>
+                    <div class="content">
+                        <div class="icon">
+                            <i class="flaticon-hair-dye-brush"></i>
+                        </div>
+                        <h3><a href="about.html">Hair Coloring</a></h3>
+                        <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type </p>
+                        <a href="service-details.html" class="learn-btn">
+                            Learn More
+                            <i class="flaticon-arrow-pointing-to-right"></i>
+                        </a>
+                        <div class="content-right">
+                            <img src="{% static 'theme/assets/images/services/services-vector-2.png' %}"
+                                alt="Service" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="services-item-two">
+                    <a href="about.html">
+                        <img src="{% static 'theme/assets/images/services/services-img8.jpg' %}" alt="Services" />
+                    </a>
+                    <div class="content">
+                        <div class="icon">
+                            <i class="flaticon-makeup-1"></i>
+                        </div>
+                        <h3><a href="about.html">Hair Styling</a></h3>
+                        <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type </p>
+                        <a href="about.html" class="learn-btn">
+                            Learn More
+                            <i class="flaticon-arrow-pointing-to-right"></i>
+                        </a>
+                        <div class="content-right">
+                            <img src="{% static 'theme/assets/images/services/services-vector-2.png' %}"
+                                alt="Service" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="services-item-two">
+                    <a href="service-details.html">
+                        <img src="{% static 'theme/assets/images/services/services-img9.jpg' %}" alt="Services" />
+                    </a>
+                    <div class="content">
+                        <div class="icon">
+                            <i class="flaticon-face-mask"></i>
+                        </div>
+                        <h3><a href="service-details.html">Luxury Spa</a></h3>
+                        <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type </p>
+                        <a href="service-details.html" class="learn-btn">
+                            Learn More
+                            <i class="flaticon-arrow-pointing-to-right"></i>
+                        </a>
+                        <div class="content-right">
+                            <img src="{% static 'theme/assets/images/services/services-vector-2.png' %}"
+                                alt="Service" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 services-bottom-btn text-center mt-20">
+                <a href="services.html" class="default-btn two">See All Service <i
+                        class="flaticon-arrow-pointing-to-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="services-shape">
+        <img src="{% static 'theme/assets/images/services/services-vector-3.png' %}" alt="Services" />
+    </div>
+</div>
+
+
+<div class="intro-video-bg2 ptb-100">
+    <div class="container">
+        <div class="video-content-two-bg">
+            <a href="https://www.youtube.com/watch?v=Zd00oIDAt60" class="play-btn">
+                <i class="ri-play-fill"></i>
+            </a>
+            <div class="section-title text-center">
+                <span>You're Welcomed!</span>
+                <h2>We Care About Your Nail And Your well-Being</h2>
+            </div>
+            <div class="top-vector" data-aos="fade-left" data-aos-delay="300" data-aos-duration="500">
+                <img src="{% static 'theme/assets/images/video/video-vector2.png' %}" alt="Video" />
+            </div>
+            <div class="bottom-vector" data-aos="fade-right" data-aos-delay="300" data-aos-duration="500">
+                <img src="{% static 'theme/assets/images/video/video-vector1.png' %}" alt="Video" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% comment %} <div class="products-area pt-100 pb-70"> {% endcomment %}
+    {% comment %} <div class="container"> {% endcomment %}
+        {% comment %} <div class="section-title mb-45 text-center"> {% endcomment %}
+            {% comment %} <span>Our Products</span> {% endcomment %}
+            {% comment %} <h2>Our Beauty Products</h2> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+        {% comment %} <div class="row justify-content-center"> {% endcomment %}
+            {% comment %} <div class="col-lg-4 col-md-6"> {% endcomment %}
+                {% comment %} <div class="products-item-two"> {% endcomment %}
+                    {% comment %} <div class="product-img"> {% endcomment %}
+                        {% comment %} <a href="shop-details.html"> {% endcomment %}
+                            {% comment %} <img src="{% static 'theme/assets/images/products/product-img7.jpg' %}" alt="Products" /> {% endcomment %}
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <ul class="products-action"> {% endcomment %}
+                            {% comment %} <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="compare.html"> <i class="ri-arrow-left-right-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i {% endcomment %}
+                                        {% comment %} class="ri-eye-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li> {% endcomment %}
+                        {% comment %} </ul> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="content"> {% endcomment %}
+                        {% comment %} <div class="title"> {% endcomment %}
+                            {% comment %} <h3><a href="shop-details.html">Setting Spray</a></h3> {% endcomment %}
+                            {% comment %} <span>$28.00</span> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                        {% comment %} <div class="rating"> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+            {% comment %} <div class="col-lg-4 col-md-6"> {% endcomment %}
+                {% comment %} <div class="products-item-two"> {% endcomment %}
+                    {% comment %} <div class="product-img"> {% endcomment %}
+                        {% comment %} <a href="shop-details.html"> {% endcomment %}
+                            {% comment %} <img src="{% static 'theme/assets/images/products/product-img8.jpg' %}" alt="Products" /> {% endcomment %}
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <ul class="products-action"> {% endcomment %}
+                            {% comment %} <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="compare.html"> <i class="ri-arrow-left-right-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i {% endcomment %}
+                                        {% comment %} class="ri-eye-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li> {% endcomment %}
+                        {% comment %} </ul> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="content"> {% endcomment %}
+                        {% comment %} <div class="title"> {% endcomment %}
+                            {% comment %} <h3><a href="shop-details.html">CC Cream</a></h3> {% endcomment %}
+                            {% comment %} <span>$30.00</span> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                        {% comment %} <div class="rating"> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+            {% comment %} <div class="col-lg-4 col-md-6"> {% endcomment %}
+                {% comment %} <div class="products-item-two"> {% endcomment %}
+                    {% comment %} <div class="product-img"> {% endcomment %}
+                        {% comment %} <a href="shop-details.html"> {% endcomment %}
+                            {% comment %} <img src="{% static 'theme/assets/images/products/product-img9.jpg' %}" alt="Products" /> {% endcomment %}
+                        {% comment %} </a> {% endcomment %}
+                        {% comment %} <ul class="products-action"> {% endcomment %}
+                            {% comment %} <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="compare.html"> <i class="ri-arrow-left-right-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView"><i {% endcomment %}
+                                        {% comment %} class="ri-eye-line"></i></a></li> {% endcomment %}
+                            {% comment %} <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li> {% endcomment %}
+                        {% comment %} </ul> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                    {% comment %} <div class="content"> {% endcomment %}
+                        {% comment %} <div class="title"> {% endcomment %}
+                            {% comment %} <h3><a href="shop-details.html">Face Primer</a></h3> {% endcomment %}
+                            {% comment %} <span>$35.00</span> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                        {% comment %} <div class="rating"> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-fill"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                            {% comment %} <i class="ri-star-line"></i> {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+                    {% comment %} </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+            {% comment %} </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+    {% comment %} <div class="product-vector-area"> {% endcomment %}
+        {% comment %} <div class="vector3"> {% endcomment %}
+            {% comment %} <img src="{% static 'theme/assets/images/products/product-vector3.png' %}" alt="vector" /> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+    {% comment %} </div> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+
+
+<div class="pricing-area section-bg pt-100 pb-70">
+    <div class="container">
+        <div class="section-title mb-45 text-center">
+            <span>Best Deals</span>
+            <h2>Our Best Price Packages</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-item-two">
+                    <img src="{% static 'theme/assets/images/pricing/pricing-img7.jpg' %}" alt="Pricing" />
+                    <div class="content">
+                        <h2>Starting From: <span>$25</span></h2>
+                        <h3>Hair Cut</h3>
+                        <ul>
+                            <li>
+                                Teen’s Hair Cut <span>$45</span>
+                            </li>
+                            <li>
+                                Men’s Hair Cut <span>$42</span>
+                            </li>
+                            <li>
+                                Children’s Hair Cut <span>$56</span>
+                            </li>
+                            <li>
+                                Women’s Hair Cut <span>$76</span>
+                            </li>
+                        </ul>
+                        <a href="appointment.html" class="default-btn">Appointment Now <i
+                                class="flaticon-booking"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-item-two">
+                    <img src="{% static 'theme/assets/images/pricing/pricing-img8.jpg' %}" alt="Pricing" />
+                    <div class="content">
+                        <h2>Starting From: <span>$50</span></h2>
+                        <h3>MakeUp</h3>
+                        <ul>
+                            <li>
+                                Just Eyes <span>$45</span>
+                            </li>
+                            <li>
+                                Bridal Trail <span>$42</span>
+                            </li>
+                            <li>
+                                Regular Makeup <span>$65</span>
+                            </li>
+                            <li>
+                                Quick Fix Makeup <span>$80</span>
+                            </li>
+                        </ul>
+                        <a href="appointment.html" class="default-btn">Appointment Now <i
+                                class="flaticon-booking"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-item-two">
+                    <img src="{% static 'theme/assets/images/pricing/pricing-img9.jpg' %}" alt="Pricing" />
+                    <div class="content">
+                        <h2>Starting From: <span>$50</span></h2>
+                        <h3>Hair Color</h3>
+                        <ul>
+                            <li>
+                                Teen’s Hair Cut <span>$45</span>
+                            </li>
+                            <li>
+                                Men’s Hair Cut <span>$42</span>
+                            </li>
+                            <li>
+                                Children’s Hair Cut <span>$65</span>
+                            </li>
+                            <li>
+                                Women’s Hair Cut <span>$80</span>
+                            </li>
+                        </ul>
+                        <a href="appointment.html" class="default-btn">Appointment Now <i
+                                class="flaticon-booking"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="testimonial-area section-bg ptb-100">
+    <div class="container">
+        <div class="section-title mb-45 text-center">
+            <span>Our Testimonial</span>
+            <h2>What Our Clients Feedback</h2>
+        </div>
+        <div class="testimonial-slider-three owl-carousel owl-theme">
+            <div class="testimonial-card">
+                <div class="testimonial-img">
+                    <img src="{% static 'theme/assets/images/testimonial/testimonial-img1.jpg' %}" alt="Testimonial" />
+                    <i class="flaticon-quote"></i>
+                </div>
+                <div class="content">
+                    <p>Pellentesque habitant morbi tristique senectus netu et pell malesuada fames ac turpis egestas
+                        vestibulu tortor quam feugiat vit tristique senectus</p>
+                    <h3>Emanuele Ebrew <span>/Senior Manager</span></h3>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-img">
+                    <img src="{% static 'theme/assets/images/testimonial/testimonial-img2.jpg' %}" alt="Testimonial" />
+                    <i class="flaticon-quote"></i>
+                </div>
+                <div class="content">
+                    <p>Pellentesque habitant morbi tristique senectus netu et pell malesuada fames ac turpis egestas
+                        vestibulu tortor quam feugiat vit tristique senectus</p>
+                    <h3>Massimo Pasquale <span>/Founder</span></h3>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-img">
+                    <img src="{% static 'theme/assets/images/testimonial/testimonial-img3.jpg' %}" alt="Testimonial" />
+                    <i class="flaticon-quote"></i>
+                </div>
+                <div class="content">
+                    <p>Pellentesque habitant morbi tristique senectus netu et pell malesuada fames ac turpis egestas
+                        vestibulu tortor quam feugiat vit tristique senectus</p>
+                    <h3>Matteo Lorenzo <span>/Manager</span></h3>
+                    <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-line"></i>
+                        <i class="ri-star-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="booking-area-two pt-100 pb-70" id="contact_us">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="booking-form pr-20">
+                    <div class="section-title mb-45">
+                        <span>For Your Service</span>
+                        <h2>Make An Appointment</h2>
+                    </div>
+                    <form action="{% url 'frontend:Appointment' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% for field in form %}
+                            <div class="{% if field.html_name == 'message' %}col-lg-12{% else %}col-lg-6{% endif %}">
+                                <div class="form-group">
+                                    {{field|as_crispy_field}}
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="book-img-three">
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <div class="book-img-bg book-img-bg1">
+                                <a href="https://www.instagram.com/?hl=en" target="_blank" class="follow-btn">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="book-img-bg book-img-bg2">
+                                <a href="https://www.instagram.com/?hl=en" target="_blank" class="follow-btn">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="book-img-bg book-img-bg3">
+                                <a href="https://www.instagram.com/?hl=en" target="_blank" class="follow-btn">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <div class="book-img-bg book-img-bg4">
+                                <a href="https://www.instagram.com/?hl=en" target="_blank" class="follow-btn">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="book-shape">
+        <img src="{% static 'theme/assets/images/book/book-shape2.png' %}" alt="Book" />
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block scripts %}
+<script>
+    $('#datetimepicker').datepicker();
+    $('#datetimepicker2').datepicker();
+</script>
+{% endblock scripts %}

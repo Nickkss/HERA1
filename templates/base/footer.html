@@ -1,0 +1,107 @@
+{% load static i18n %}
+{% url 'frontend:Home' as home_url %}
+<footer class="footer-area footer-bg">
+    <div class="container pt-100 pb-70">
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="footer-widget pe-5">
+                    <div class="footer-logo">
+                        {% if settings.logo %}
+                        <a href="{{home_url}}">
+                            <img src="{{settings.logo.url}}" class="footer-logo1" alt="Image">
+                        </a>
+                        {% else %}
+                        <a href="{{home_url}}">
+                            <img src="{% static 'theme/assets/images/logos/logo.png' %}" class="footer-logo1"
+                                alt="Image">
+                        </a>
+                        {% endif %}
+                        {% if settings.logo_white %}
+                        <a href="{{home_url}}">
+                            <img src="{{settings.logo_white.url}}" class="footer-logo2" alt="Image">
+                        </a>
+                        {% else %}
+                        <a href="{{home_url}}">
+                            <img src="{% static 'theme/assets/images/logos/logo-white.png' %}" class="footer-logo2"
+                                alt="Image">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <p>
+                        {{settings.about_us}}
+                    </p>
+                    <ul class="social-link">
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/" target="_blank">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://vimeo.com/" target="_blank">
+                                <i class="ri-vimeo-fill"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="footer-widget ps-4">
+                    <h3>Salon Hours</h3>
+                    <ul class="salon-hours">
+                        <li>
+                            <div class="content">
+                                <h3>Monday - Friday</h3>
+                                <span>09:00 AM - 10:00 PM </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="content">
+                                <h3>Saturday - Sunday</h3>
+                                <span>10:00 AM - 08:00 PM </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="footer-widget ps-3">
+                    <h3>Get In Touch</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="flaticon-telephone"></i>
+                            <div class="content">
+                                <h4>Contact Us</h4>
+                                <span>{{settings.phone}}</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="flaticon-email"></i>
+                            <div class="content">
+                                <h4>Email:</h4>
+                                <span><a href="mailto:{{settings.email}}"><span>{{settings.email}}</span></a></span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="flaticon-pin"></i>
+                            <div class="content">
+                                <h4>Address</h4>
+                                <span>{{settings.address}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,236 @@
+{% extends 'base/base.html' %}
+{% load static i18n core_filters %}
+{% block title %}
+{{course.title}}
+{% endblock title %}
+{% block styles %}
+
+<style>
+    .bg-strip {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        height: 50%;
+        color: #fff;
+    }
+
+    .bg-custom {
+        background: #2b5876;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #4e4376, #2b5876);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #4e4376, #2b5876);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+    }
+
+    .page-content * {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .color-change {
+        color: #fff;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .color-change {
+            color: #000;
+        }
+
+        .bg-custom {
+            background: transparent;
+        }
+    }
+</style>
+{% endblock styles %}
+{% block content %}
+<div class="page-content">
+    <div class="section-full  p-t80 p-b50 bg-white">
+        <div class="bg-strip bg-custom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-12 order-2 order-md-1 color-change">
+                    <div class="row">
+                        <div class="col-md-12 mb-4">
+                            <p class="h1">{{course.title}}</p>
+                            <span>
+                                <b>{{course.rating}}</b>&nbsp;&nbsp;
+                                {% for rating in course.rating|range  %}
+                                <img src="{% static 'images/icons/star.ico' %}" alt="" srcset="">
+                                {% endfor %}
+                                <b class="text-muted">|</b>
+                                {% with course.students.all.count as learners %}
+                                <b>&nbsp;{{learners}} Learner{% if lerners > 1 %}s{% endif %} Enrolled</b>
+                                {% endwith %}
+                                <b class="text-muted">|</b>
+                                <b>&nbsp;{{course.get_level_display}}</b>
+
+                            </span>
+                            <div class="mt-3">
+                                {{course.description|safe}}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="list-group">
+                                <style>
+                                    .video-thumb {
+                                        width: 80px !important;
+                                        height: 40px !important;
+                                        object-fit: cover;
+                                        float: left;
+                                        margin-right: 10px;
+                                    }
+                                </style>
+                                {% for video in course.videos.all %}
+                                <a href="{{video.video.url}}" class="list-group-item list-group-item-action mfp-video">
+                                    <span>
+                                        {% if video.thumb %}
+                                        <img src="{{video.thumb.url}}" alt="{{video.title}}" class="video-thumb">
+                                        {% else %}
+                                        <img src="{% static 'images/default/thumb.ico' %}" alt="{{video.title}}"
+                                            class="video-thumb">
+                                        {% endif %}
+                                    </span>
+                                    <span>
+                                        <b class="text-muted">
+                                            Lession {{forloop.counter|stringformat:"02d"}}&nbsp;:&nbsp;
+                                        </b>
+                                    </span>
+                                    <span>
+                                        {{video.title}}
+                                        <small class="text-muted">(Click to play)</small>
+                                    </span>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-8 col-12 order-1 order-md-2 mb-4">
+                    <style>
+                        .play-now-box {
+                            display: block;
+                            position: relative;
+                            max-height: 200px;
+                            height: 200px;
+                        }
+
+                        .play-now-box .card-img-top {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            float: left;
+                        }
+
+                        .play-now-box .play-button {
+                            position: absolute;
+                            left: 10%;
+                            top: 10%;
+                            border: 1px solid rgba(0, 0, 255, 0.5);
+                            background: white;
+                            color: blue;
+                            border-radius: 50%;
+                            max-height: 60px;
+                            max-width: 60px;
+                            height: 60px;
+                            width: 60px;
+                            box-shadow: 10px -10px 15px rgba(0, 0, 90, 0.4), inset 0 0 25px rgba(0, 10, 100, 0.5), inset 0 0 15px 2px rgba(55, 0, 75, 0.4), inset 0 0 5px 3px rgba(0, 0, 0, 0.4);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            animation: inf_rotate 5s ease-in-out infinite;
+                            margin: 0px !important;
+                            padding: 0px !important;
+                        }
+
+                        .play-button img {
+                            height: 30px;
+                            width: 30px;
+                            padding: 0px !important;
+                            margin: 0px !important;
+                        }
+
+                        @keyframes inf_rotate {
+                            0% {
+                                transform: rotate(0deg);
+                                box-shadow: 0 0 1px black;
+                            }
+
+                            100% {
+                                transform: rotate(360deg);
+                                box-shadow: 0 0 50px rgba(6, 0, 56, 0.532), inset 0 0 50px rgba(255, 253, 161, 0.962)
+                            }
+                        }
+
+                        .card-img-top {
+                            border-radius: 0.2rem;
+                        }
+                    </style>
+                    {% with course.videos.all.first as first_video %}
+                    <div class="card shadow" style="padding: 2px;">
+                        <a href="{{first_video.video.url}}" class="mfp-video play-now-box">
+                            {% if first_video.thumb %}
+                            <img src="{{first_video.thumb.url}}" class="card-img-top" alt="">
+                            {% else %}
+                            <img src="{% static 'images/default/thumb.ico' %}" class="card-img-top" alt="">
+                            {% endif %}
+                            <span class="play-button">
+                                <img src="{% static 'images/icons/play.ico' %}" alt="">
+                            </span>
+                        </a>
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                {{first_video.title}}
+                            </h3>
+                            <p>
+                                <small class="text-muted text-uppercase">This Course Includes</small>
+                            </p>
+                            {% if course.duration %}
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <img src="{% static 'images/icons/duration.ico' %}" alt="" srcset="">
+                                </div>
+                                <div class="col-auto">
+                                    <label class="mb-0 text-dark">{{course.duration}}</label>
+                                    <br>
+                                    <b class="text-muted" style="font-size: 12px;">
+                                        Of self-paced video lessons
+                                    </b>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if course.certificate %}
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <img src="{% static 'images/icons/certificate.ico' %}" alt="" srcset="">
+                                </div>
+                                <div class="col-auto">
+                                    <label class="mb-0 text-dark">Completion Certificate</label>
+                                    <br>
+                                    <b class="text-muted" style="font-size: 12px;">
+                                        awarded on course completion
+                                    </b>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if course.rewards %}
+                            <div class="row mb-3">
+                                <div class="col-auto">
+                                    <img src="{% static 'images/icons/rewards.ico' %}" alt="" srcset="">
+                                </div>
+                                <div class="col-auto">
+                                    <label class="mb-0 text-dark">Enroll and win rewards</label>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endwith %}
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    {% endblock content %}

@@ -1,0 +1,108 @@
+{% load static crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+
+	<link rel="stylesheet" type="text/css"
+		href="{% static 'auth/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/vendor/animate/animate.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/vendor/css-hamburgers/hamburgers.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/vendor/animsition/css/animsition.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/vendor/select2/select2.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/vendor/daterangepicker/daterangepicker.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'auth/css/main.css' %}">
+
+	<meta name="robots" content="noindex, follow">
+</head>
+
+<body>
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({% static 'auth/images/bg-01.jpg' %});">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" action="" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						Login
+					</span>
+					<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
+						<span class="label-input100">Email</span>
+						<input class="input100" type="text" name="username" placeholder="Type your email">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					<!-- <div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div> -->
+					<div class="container-login100-form-btn mt-5">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Login
+							</button>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="dropDownSelect1"></div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
+
+	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+	<script src="{% static 'auth/vendor/animsition/js/animsition.min.js' %}"></script>
+
+
+	<script src="{% static 'auth/vendor/select2/select2.min.js' %}"></script>
+
+	<script src="{% static 'auth/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'auth/vendor/daterangepicker/daterangepicker.js' %}"></script>
+
+	<script src="{% static 'auth/vendor/countdowntime/countdowntime.js' %}"></script>
+
+	<script src="{% static 'auth/js/main.js' %}"></script>
+</body>
+
+</html>
